@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "db060549-b0cc-4740-aa62-641aa12bc59a",
+		"name": "PANDA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserLogin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\" : {\n\t\t\"email\": \"dhruvaga11@gmail.com\",\n\t\t\"password\": \"dhruv11a\"\n\t}\t\n}"
+				},
+				"url": {
+					"raw": "https://panda-inter.herokuapp.com/api/users/login",
+					"protocol": "https",
+					"host": [
+						"panda-inter",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserRegistration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\" : {\n\t\t\"name\": \"DHRUV AGARWAL\",\n\t\t\"mobile\": 8435956562,\n\t\t\"email\": \"dhruvaga1@gmail.com\",\n\t\t\"password\": \"dhruv11a\"\n\t}\t\n}"
+				},
+				"url": {
+					"raw": "https://panda-inter.herokuapp.com/api/users",
+					"protocol": "https",
+					"host": [
+						"panda-inter",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCarDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYTIyNTMxN2UwNWJhZDUxNWFkMTYxOCIsImVtYWlsIjoiZGhydXZhZ2ExMUBnbWFpbC5jb20iLCJleHAiOjE1NzYzMDY3ODgsImlhdCI6MTU3MTEyMjc4OH0.fLKzY0rKvcjzaP_UnNhi2IRX1etaIMLmuHDT5FAAD-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"car\" : {\n\t\t\"vechile_registration_no\": \"hjsbsk\",\n\t\t\"vechile_lic_plate_no\": \"hjsbsk\",\n\t\t\"driver_detail\": \"5da225317e05bad515ad1618\",\n\t\t\"model\": \"hjsbsk\",\n\t\t\"company\": \"hjsbsk\",\n\t\t\"basic_rent_per_day\": 20,\n\t\t\"seat_capacity\": 11\n\t}\t\n}"
+				},
+				"url": {
+					"raw": "https://panda-inter.herokuapp.com/api/car/addCar",
+					"protocol": "https",
+					"host": [
+						"panda-inter",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"car",
+						"addCar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CarAvailability",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://panda-inter.herokuapp.com/api/booking/cars/?seat_capacity=4&date_from=2019-10-15T09:21:05.189Z&date_to=2019-10-15T09:21:05.189Z&from_price=10&to_price=80",
+					"protocol": "https",
+					"host": [
+						"panda-inter",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"booking",
+						"cars",
+						""
+					],
+					"query": [
+						{
+							"key": "seat_capacity",
+							"value": "4"
+						},
+						{
+							"key": "date_from",
+							"value": "2019-10-15T09:21:05.189Z"
+						},
+						{
+							"key": "date_to",
+							"value": "2019-10-15T09:21:05.189Z"
+						},
+						{
+							"key": "from_price",
+							"value": "10"
+						},
+						{
+							"key": "to_price",
+							"value": "80"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckBooking",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYTIyNTMxN2UwNWJhZDUxNWFkMTYxOCIsImVtYWlsIjoiZGhydXZhZ2ExMUBnbWFpbC5jb20iLCJleHAiOjE1NzYzMDY3ODgsImlhdCI6MTU3MTEyMjc4OH0.fLKzY0rKvcjzaP_UnNhi2IRX1etaIMLmuHDT5FAAD-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"car\" : {\n\t\t\"vechile_registration_no\": \"hjsbsk\",\n\t\t\"vechile_lic_plate_no\": \"hjsbsk\",\n\t\t\"driver_detail\": \"5da225317e05bad515ad1618\",\n\t\t\"model\": \"hjsbsk\",\n\t\t\"company\": \"hjsbsk\",\n\t\t\"basic_rent_per_day\": 20,\n\t\t\"seat_capacity\": 11\n\t}\t\n}"
+				},
+				"url": {
+					"raw": "https://panda-inter.herokuapp.com/api/booking/checkBooking",
+					"protocol": "https",
+					"host": [
+						"panda-inter",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"booking",
+						"checkBooking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookRide",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYTIyNTMxN2UwNWJhZDUxNWFkMTYxOCIsImVtYWlsIjoiZGhydXZhZ2ExMUBnbWFpbC5jb20iLCJleHAiOjE1NzYzMDY3ODgsImlhdCI6MTU3MTEyMjc4OH0.fLKzY0rKvcjzaP_UnNhi2IRX1etaIMLmuHDT5FAAD-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "id",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYTIyNTMxN2UwNWJhZDUxNWFkMTYxOCIsImVtYWlsIjoiZGhydXZhZ2ExMUBnbWFpbC5jb20iLCJleHAiOjE1NzYzMDY3ODgsImlhdCI6MTU3MTEyMjc4OH0.fLKzY0rKvcjzaP_UnNhi2IRX1etaIMLmuHDT5FAAD-g",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"car\": {\n        \"_id\": \"5da5641834f6c6203d7bb9c6\",\n        \"booking_date\": \"2019-10-15T06:15:52.315Z\",\n        \"expected_return_date\": 20,\n        \"cost\": 11\n    }\n}"
+				},
+				"url": {
+					"raw": "https://panda-inter.herokuapp.com/api/booking/bookRide",
+					"protocol": "https",
+					"host": [
+						"panda-inter",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"booking",
+						"bookRide"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYTIyNTMxN2UwNWJhZDUxNWFkMTYxOCIsImVtYWlsIjoiZGhydXZhZ2ExMUBnbWFpbC5jb20iLCJleHAiOjE1NzYzMDY3ODgsImlhdCI6MTU3MTEyMjc4OH0.fLKzY0rKvcjzaP_UnNhi2IRX1etaIMLmuHDT5FAAD-g",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYTIyNTMxN2UwNWJhZDUxNWFkMTYxOCIsImVtYWlsIjoiZGhydXZhZ2ExMUBnbWFpbC5jb20iLCJleHAiOjE1NzYzMjM5NTIsImlhdCI6MTU3MTEzOTk1Mn0.itbOI0szBFmkqK7uFWJ-uP9lwLkC2OLLr7ca6RqWVXo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"car\" : {\n\t\t\"_id\": \"5da593d0bfe815d61facf5f0\"\n\t}\t\n}"
+				},
+				"url": {
+					"raw": "https://panda-inter.herokuapp.com/api/car/deleteCar",
+					"protocol": "https",
+					"host": [
+						"panda-inter",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"car",
+						"deleteCar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
