@@ -36,4 +36,15 @@ router.post('/addCar', auth.required, function(req, res, next) {
     }).catch(next);
 });
 
+router.delete('/deleteCar', auth.required, function(req, res, next) {
+    User.findById(req.payload.id).then(function(user) {
+        if (!user) { return res.sendStatus(401); }
+        Cars.findOne({ _id: Object(req.body.car._id), '$or': [{ customer: { '$size': 0 } }, { "customer.return_date": { $not: { $eq: null } } }] }).then(function(car) {
+            console.log(car)
+            Cars.remove({ _id: Object(req.body.car._id) });
+            return res.writeHead(200);
+        }).catch(next);
+    }).catch(next);
+});
+
 module.exports = router;
