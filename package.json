@@ -22,7 +22,7 @@
     "methods": "*",
     "mongoose": "4.4.10",
     "mongoose-unique-validator": "1.0.2",
-    "morgan": "1.7.0",
+    "morgan": "1.9.1",
     "nodemailer": "*",
     "open": "0.0.5",
     "passport": "*",
