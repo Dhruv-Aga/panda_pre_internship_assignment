@@ -1,0 +1,40 @@
+{
+  "name": "Panda",
+  "version": "1.0.0",
+  "description": "Panda Assessment",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "cors": "*",
+    "ejs": "*",
+    "errorhandler": "*",
+    "express": "*",
+    "express-jwt": "*",
+    "express-mailer": "*",
+    "express-session": "*",
+    "jsonwebtoken": "*",
+    "location-href": "^1.0.0",
+    "method-override": "*",
+    "methods": "*",
+    "mongoose": "4.4.10",
+    "mongoose-unique-validator": "1.0.2",
+    "morgan": "1.7.0",
+    "nodemailer": "*",
+    "open": "0.0.5",
+    "passport": "*",
+    "passport-local": "*",
+    "promise": "*",
+    "request": "*",
+    "slug": "*",
+    "underscore": "*",
+    "window": "^4.2.6"
+  },
+  "devDependencies": {
+    "newman": "*",
+    "nodemon": "*"
+  }
+}
